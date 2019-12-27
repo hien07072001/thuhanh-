@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen tien</title>
+</head>
+<body>
+<from>
+
+
+Amout:<br>
+<input  id="amout"type="text"><BR>
+From Curreny:<br>
+    <select id="fromcurreny">
+        <option value="vn">viet nam</option>
+        <option value="usd" >do la</option>
+    </select><BR>
+    To Curreny:<br>
+    <select id="tocurreny">
+        <option value="usd">do la</option>
+        <option value="vnd">viet nam</option>
+    </select><BR>
+    <input type="button" onclick="convert()">Convert</input><br>
+    <div>
+        <p>Result</p>
+        <span id="result"></span>
+    </div>
+
+    
+</from>
+<script>
+
+    function convert() {
+        let result =0;
+        let amout =document.getElementById("amout").value;
+        let tocurreny =document.getElementById("tocurreny").value;
+        let fromcurreny =document.getElementById("fromcurreny").value;
+
+       if(fromcurreny=== "usd" && tocurreny=== "vnd" ){
+            result= amout*23000+ " " +tocurreny;
+
+        }else
+            if(fromcurreny === "vnd" && tocurreny === "usd" ){
+                result= amout/23000+ " " +tocurreny;
+            }else {
+                result="Choose currency again"
+            }
+
+            document.getElementById("result").innerText=result;
+
+        
+    }
+</script>
+
+</body>
+</html>
